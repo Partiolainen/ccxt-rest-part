@@ -479,10 +479,10 @@
     "pg": "^7.10.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^5.7.6",
-    "sqlite3": "^4.0.6",
+    "sqlite3": "^4.2.0",
     "tedious": "^6.1.1",
     "umzug": "^2.2.0",
-    "web3": "^1.0.0-beta.52"
+    "web3": "^1.3.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -496,7 +496,7 @@
     "widdershins": "^3.6.7"
   },
   "scripts": {
-    "postinstall": "npm run swagger:verify_version && rm -rf ./node_modules/oas-tools/.git",
+    "postinstall": "npm run swagger:verify_version",
     "prestart": "npm run swagger:verify_version",
     "start": "NODE_ENV=development node ./bin/www",
     "test": "NODE_ENV=test ./node_modules/.bin/mocha test/ --recursive --exclude test/generated/** --reporter mochawesome --reporter-options reportDir=./out/mochawesome-report,reportTitle='CCXT-REST Test Results',reportPageTitle='CCXT-REST Test Results'",
