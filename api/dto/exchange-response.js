@@ -54,6 +54,7 @@ class MarketResponse {
         config.limits = config.limits || {};
 
         this.id = config.id;
+        this.active = config.active ?? true;
         this.symbol = config.symbol;
         this.base = config.base;
         this.quote = config.quote;
