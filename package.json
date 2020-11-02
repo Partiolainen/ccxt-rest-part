@@ -1,6 +1,6 @@
 {
-  "name": "ccxt-rest",
-  "version": "2.5.0",
+  "name": "ccxt-rest-part",
+  "version": "2.5.1",
   "description": "Open Source Unified REST API of 100+ Crypto Exchange Sites",
   "homepage": "https://ccxt-rest.io",
   "repository": {
@@ -466,7 +466,7 @@
     "async": "^2.6.2",
     "bignumber.js": "^8.1.1",
     "body-parser": "^1.18.3",
-    "ccxt": "^1.29.52",
+    "ccxt": "^1.37.18",
     "ethereumjs-abi": "^0.6.7",
     "ethereumjs-util": "^6.1.0",
     "express": "^4.16.4",
