@@ -475,7 +475,7 @@
     "jsonwebtoken": "^8.5.1",
     "mariadb": "^2.0.3",
     "mysql2": "^1.6.5",
-    "oas-tools": "^2.1.4",
+    "oas-tools": "^2.1.8",
     "pg": "^8.4.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "^5.15.1",
