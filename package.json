@@ -493,7 +493,7 @@
     "should": "^7.1.0",
     "supertest": "^4.0.2",
     "uri-js": "^4.4.0",
-    "widdershins": "^3.6.7"
+    "widdershins": "^4.0.1"
   },
   "scripts": {
     "preinstall": "rm -rf ./node_modules/oas-tools/.git",
