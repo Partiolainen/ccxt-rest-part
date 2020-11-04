@@ -194,6 +194,18 @@ describe('> controllers', function() {
               })
         });
 
+        it('> GET:/exchange/nonExistentExchangeName/tradingFees then return 404', function(done) {
+          this.timeout(TIMEOUT_MS)
+          request(server)
+              .get('/exchange/nonExistentExchangeName/tradingFees')
+              .expect('Content-Type', /json/)
+              .expect(404)
+              .end((err, res) => {
+                should.not.exist(err);
+                done();
+              })
+         });
+
         it('> [Unsupported Exchange Name] Place order then return 404', function(done) {
           request(server)
             .post('/exchange/nonExistentExchangeName/order')

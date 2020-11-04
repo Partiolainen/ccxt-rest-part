@@ -27,6 +27,7 @@ module.exports = {
   ticker: ticker,
   tickers: tickers,
   balances: balances,
+  tradingFees: tradingFees,
   createOrder: createOrder,
   cancelOrder: cancelOrder,
   fetchOrder: fetchOrder,
@@ -181,6 +182,17 @@ function balances(req, res) {
       [], 
       'fetchBalance', 
       (response) => new exchange_response.BalanceResponse(response)
+    )
+  })
+}
+
+function tradingFees(req, res) {
+  _doExchangeSpecificOrDefault(req, res, 'tradingfees', (req, res) => {
+    execute(req, res, 
+      [], 
+      'fetchTradingFees', 
+      //(response) => new exchange_response.TradingFeesResponse(response)
+      (response) => Object.keys(response).sort().map(symbol => new exchange_response.TradingFeeResponse(response[symbol]))
     )
   })
 }

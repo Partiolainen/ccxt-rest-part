@@ -56,6 +56,7 @@ parallelTest.runParallelProcessTests(
         const fetchMyTrades = exchange.has.fetchMyTrades ? 200 : 501;
         const fetchTicker = exchange.has.fetchTicker ? 200 : 501;
         const fetchTickers = exchange.has.fetchTickers ? 200 : 501;
+        const fetchTradingFees = exchange.has.fetchTradingFees ? 200 : 500;
 
         return testContent
             .replace(new RegExp('%%exchangeId%%', 'g'), exchangeId)
@@ -67,6 +68,7 @@ parallelTest.runParallelProcessTests(
             .replace(new RegExp("%%expectedStatusCodesFetchMyTrades%%", 'g'), fetchMyTrades)
             .replace(new RegExp("%%expectedStatusCodesFetchTicker%%", 'g'), fetchTicker)
             .replace(new RegExp("%%expectedStatusCodesFetchTickers%%", 'g'), fetchTickers)
+            .replace(new RegExp("%%expectedStatusCodesFetchTradingFees%%", 'g'), fetchTradingFees)
             ;
     }, 
     (command) => {

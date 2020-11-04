@@ -182,6 +182,16 @@ class OrderResponse {
     }
 }
 
+class TradingFeeResponse {
+    constructor(config){
+        config = config || {};
+        this.symbol = config.symbol;
+        this.maker = config.maker;
+        this.taker = config.taker;
+        this.info = config.info;
+    }
+}
+
 module.exports = {
     AccessToken: AccessToken,
     ExchangeResponse: ExchangeResponse,
@@ -190,5 +200,6 @@ module.exports = {
     TradeResponse: TradeResponse,
     TickerResponse: TickerResponse,
     BalanceResponse: BalanceResponse,
-    OrderResponse: OrderResponse
+    OrderResponse: OrderResponse,
+    TradingFeeResponse: TradingFeeResponse
 };
