@@ -1,6 +1,6 @@
 const ccxt = require('ccxt')
     , db = require('../models')
-    , Flatted = require('flatted/cjs')
+    , Flatted = require('flatted')
 ;
 
 const exchangeCache = {}
