@@ -28,6 +28,7 @@ module.exports = {
   tickers: tickers,
   balances: balances,
   tradingFees: tradingFees,
+  fundingFees: fundingFees,
   createOrder: createOrder,
   cancelOrder: cancelOrder,
   fetchOrder: fetchOrder,
@@ -191,8 +192,18 @@ function tradingFees(req, res) {
     execute(req, res, 
       [], 
       'fetchTradingFees', 
-      //(response) => new exchange_response.TradingFeesResponse(response)
       (response) => Object.keys(response).sort().map(symbol => new exchange_response.TradingFeeResponse(response[symbol]))
+    )
+  })
+}
+
+function fundingFees(req, res) {
+  _doExchangeSpecificOrDefault(req, res, 'fundingfees', (req, res) => {
+    execute(req, res, 
+      [], 
+      'fetchFundingFees', 
+      (response) => new exchange_response.FundingFeeResponse(response)
+      //(response) => Object.keys(response).sort().map(symbol => new exchange_response.FundingFeeResponse(response[symbol]))
     )
   })
 }

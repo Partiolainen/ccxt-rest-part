@@ -526,6 +526,47 @@ paths:
           description: If the exchange integration does NOT support this function
         "504":
           description: If the exchange itself could not be reached because of some network error          
+  /exchange/{exchangeName}/fundingFees:
+    get:
+      description: >-
+        Get the trading fees of the exchange referenced by the {exchangeName}. 
+        
+        
+        <br/> *Parameters listed here are common to all exchanges. But any other parameter passed would be forwarded as well into the exchange.*
+      security:
+        - bearerAuth: []
+      tags:
+        - Private Data API
+      x-swagger-router-controller: exchange
+      operationId: fundingFees
+      parameters:
+        - $ref: "#/components/parameters/exchangeNameParam"
+        - name: exchangeSpecificParams
+          in: query
+          description: Any exchange specific parameters you want to pass in
+          schema:
+            type: object
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BalanceResponse'
+        "400":
+          description: If the exchange itself complained about the parameters passed
+        "401":
+          description: If the exchange integration requires api key and secret for this function
+        "403":
+          description: If the exchange integration had an authentication issue (most probably nonce error)
+        "404":
+          description: Exchange with that name is NOT supported
+        "500":
+          description: If an unexpected error occurred
+        "501":
+          description: If the exchange integration does NOT support this function
+        "504":
+          description: If the exchange itself could not be reached because of some network error                  
   /exchange/{exchangeName}/orders:
     get:
       description: >-

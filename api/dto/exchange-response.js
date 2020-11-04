@@ -192,6 +192,15 @@ class TradingFeeResponse {
     }
 }
 
+class FundingFeeResponse {
+    constructor(config){
+        config = config || {};        
+        this.deposit = config.deposit;
+        this.withdraw = config.withdraw;
+        this.info = config.info;
+    }
+}
+
 module.exports = {
     AccessToken: AccessToken,
     ExchangeResponse: ExchangeResponse,
@@ -201,5 +210,6 @@ module.exports = {
     TickerResponse: TickerResponse,
     BalanceResponse: BalanceResponse,
     OrderResponse: OrderResponse,
-    TradingFeeResponse: TradingFeeResponse
+    TradingFeeResponse: TradingFeeResponse,
+    FundingFeeResponse: FundingFeeResponse
 };
