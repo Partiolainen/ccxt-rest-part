@@ -491,7 +491,7 @@
     "mochawesome": "^6.2.1",
     "redoc-cli": "^0.9.13",
     "should": "^13.2.3",
-    "supertest": "^6.0.0",
+    "supertest": "^6.0.1",
     "uri-js": "^4.4.0",
     "widdershins": "^4.0.1"
   },
