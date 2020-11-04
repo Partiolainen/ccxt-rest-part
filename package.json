@@ -471,7 +471,7 @@
     "ethereumjs-util": "^7.0.7",
     "express": "^4.17.1",
     "flatted": "^3.1.0",
-    "js-yaml": "^3.13.1",
+    "js-yaml": "^3.14.0",
     "jsonwebtoken": "^8.5.1",
     "mariadb": "^2.5.1",
     "mysql2": "^2.2.5",
