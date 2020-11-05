@@ -183,7 +183,7 @@ class OrderResponse {
 }
 
 class TradingFeeResponse {
-    constructor(config){
+    constructor(config) {
         config = config || {};
         this.symbol = config.symbol;
         this.maker = config.maker;
@@ -193,10 +193,24 @@ class TradingFeeResponse {
 }
 
 class FundingFeeResponse {
-    constructor(config){
+    constructor(config) {
         config = config || {};        
         this.deposit = config.deposit;
         this.withdraw = config.withdraw;
+        this.info = config.info;
+    }
+}
+
+class CurrencyResponse {
+    constructor(config) {
+        config = config || {};
+        this.id = config.id;
+        this.active = config.active;
+        this.code = config.code;
+        this.fee = config.fee;
+        this.name = config.name;
+        this.precision = config.precision;
+        this.limits = config.limits;
         this.info = config.info;
     }
 }
@@ -211,5 +225,6 @@ module.exports = {
     BalanceResponse: BalanceResponse,
     OrderResponse: OrderResponse,
     TradingFeeResponse: TradingFeeResponse,
-    FundingFeeResponse: FundingFeeResponse
+    FundingFeeResponse: FundingFeeResponse,
+    CurrencyResponse: CurrencyResponse
 };

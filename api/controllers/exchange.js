@@ -21,6 +21,7 @@ module.exports = {
   getConnection : getConnection,
   deletePrivateConnection : deletePrivateConnection,
   markets: markets,
+  currencies: currencies,
   orderBook: orderBook,
   l2OrderBook: l2OrderBook,
   trades: trades,
@@ -204,6 +205,17 @@ function fundingFees(req, res) {
       'fetchFundingFees', 
       (response) => new exchange_response.FundingFeeResponse(response)
       //(response) => Object.keys(response).sort().map(symbol => new exchange_response.FundingFeeResponse(response[symbol]))
+    )
+  })
+}
+
+function currencies(req, res) {
+  _doExchangeSpecificOrDefault(req, res, 'currencies', (req, res) => {
+    execute(req, res, 
+      [], 
+      'fetchCurrencies', 
+      //(response) => new exchange_response.CurrenciesResponse(response)
+      (response) => Object.keys(response).sort().map(symbol => new exchange_response.CurrencyResponse(response[symbol]))
     )
   })
 }
