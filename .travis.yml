@@ -1,7 +1,7 @@
 
 language: node_js
 node_js:
-  - "10.15.1"
+  - "14.15.0"
 
 before_install:
   - npm i -g makeshift && makeshift -r https://registry.npmjs.org
