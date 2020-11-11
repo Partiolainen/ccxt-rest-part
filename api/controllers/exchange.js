@@ -19,6 +19,7 @@ module.exports = {
   list: list,
   createPrivateConnection: createPrivateConnection,
   getConnection : getConnection,
+  fetchStatus: fetchStatus, 
   deletePrivateConnection : deletePrivateConnection,
   markets: markets,
   currencies: currencies,
@@ -323,6 +324,16 @@ function fetchMyTrades(req, res) {
       ['symbol', 'since', 'limit'], 
       'fetchMyTrades', 
       (response) => response.map(rawTrade => new exchange_response.TradeResponse(rawTrade))
+    )
+  })
+}
+
+function fetchStatus(req, res) {
+  _doExchangeSpecificOrDefault(req, res, 'fetchStatus', (req, res) => {
+    execute(req, res, 
+      [], 
+      'fetchStatus', 
+      (reponse) => new exchange_response.ExchangeStatus(reponse)
     )
   })
 }

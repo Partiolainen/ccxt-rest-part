@@ -215,6 +215,16 @@ class CurrencyResponse {
     }
 }
 
+class ExchangeStatus {
+    constructor(config) {
+        config = config || {};
+        this.status = config.status;
+        this.updated = config.updated;
+        this.eta = config.eta;
+        this.url = config.url;
+    }
+}
+
 module.exports = {
     AccessToken: AccessToken,
     ExchangeResponse: ExchangeResponse,
@@ -226,5 +236,6 @@ module.exports = {
     OrderResponse: OrderResponse,
     TradingFeeResponse: TradingFeeResponse,
     FundingFeeResponse: FundingFeeResponse,
-    CurrencyResponse: CurrencyResponse
+    CurrencyResponse: CurrencyResponse,
+    ExchangeStatus: ExchangeStatus
 };

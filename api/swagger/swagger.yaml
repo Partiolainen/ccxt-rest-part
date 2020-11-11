@@ -140,6 +140,28 @@ paths:
           description: Exchange with that name is NOT supported
         "500":
           description: If an unexpected error occurred
+  /exchange/{exchangeName}/status:
+    get:
+      description: Retreives the current exchange status given the {exchangeName} 
+      security:
+        - bearerAuth: []
+      tags:
+        - Authentication API
+      x-swagger-router-controller: exchange
+      operationId: fetchStatus
+      parameters:
+        - $ref: "#/components/parameters/exchangeNameParam"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExchangeResponse'
+        "404":
+          description: Exchange with that name is NOT supported
+        "500":
+          description: If an unexpected error occurred        
   /exchange/{exchangeName}/markets:
     get:
       description: >-
