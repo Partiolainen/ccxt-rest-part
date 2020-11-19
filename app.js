@@ -76,6 +76,7 @@ function start(callback) {
         .then(() => {
           oasTools.initialize(oasDoc, app, function() {
             server = http.createServer(app);
+            server.keepAliveTimeout = 15 * 1000;
             server.listen(serverPort, function() {
               console.log("App running at http://localhost:" + server.address().port);
               console.log("________________________________________________________________");
