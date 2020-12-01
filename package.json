@@ -489,7 +489,7 @@
     "mocha": "^7.2.0",
     "mocha-parallel-tests": "^2.3.0",
     "mochawesome": "^6.2.1",
-    "redoc-cli": "^0.10.1",
+    "redoc-cli": "^0.10.2",
     "should": "^13.2.3",
     "supertest": "^6.0.1",
     "uri-js": "^4.4.0",
