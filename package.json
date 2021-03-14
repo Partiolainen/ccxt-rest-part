@@ -478,7 +478,7 @@
     "oas-tools": "^2.1.8",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.3.5",
+    "sequelize": "^6.5.1",
     "sqlite3": "^5.0.0",
     "tedious": "^9.2.1",
     "umzug": "^2.3.0",
